@@ -1,0 +1,140 @@
+body {
+  background-color: rgb(33, 36, 36);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .container-utama {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #525151;
+  border-radius: 10px;
+  box-sizing: border-box;
+} */
+
+.text-white {
+  color: white;
+}
+
+/* laatihan 1 */
+.container-satu {
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+}
+
+.kolom-utama {
+  flex: 3;
+  order: 2;
+}
+
+.sidebar-satu {
+  flex: 1;
+  order: 1;
+}
+
+.sidebar-dua {
+  order: 3;
+  flex: 1;
+}
+/* akhir css 1 */
+
+/* awal css dua */
+.container-dua {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.layanan {
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.layanan.satu {
+  background-color: #2e2ec2;
+}
+.layanan.dua {
+  background-color: #1ead68;
+}
+.layanan.tiga {
+  background-color: #a92ec2;
+}
+/* akhir css 2 */
+
+/* latihan 3 */
+.container-tiga {
+  max-width: 800px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+}
+
+.tubnail img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+/* akhir */
+
+.container-empat {
+  max-width: 800px;
+  margin: 30px auto;
+
+  display: flex;
+}
+.card {
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.card .head {
+  height: 150px;
+  background-color: #666;
+}
+.card .content {
+  text-align: center;
+  padding: 20px;
+  background-color: #121111;
+}
+/* akhir */
+
+.container-lima {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kotak {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .container-dua {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .layanan {
+    width: 30%;
+  }
+}

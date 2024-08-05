@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Icons Example</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap-select.css" />
+    <link rel="stylesheet" href="icons/bootstrap-icons.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Contoh Tombol dengan Ikon</h1>
+      <!-- Tombol dengan ikon di sebelah kiri -->
+      <button type="button" class="btn btn-primary"><i class="bi bi-alarm"></i> Alarm</button>
+
+      <!-- Tombol dengan ikon di sebelah kanan -->
+      <button type="button" class="btn btn-success">Save <i class="bi bi-save"></i></button>
+
+      <!-- Tombol dengan ikon saja -->
+      <button type="button" class="btn btn-danger">
+        <i class="bi bi-door-open"></i>
+      </button>
+    </div>
+
+    <!-- contoh input -->
+    <div class="container mt-5">
+      <h1>Contoh Input dengan Ikon</h1>
+
+      <!-- Input Text dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputText" class="form-label">Text Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <input type="text" class="form-control" id="inputText" placeholder="Enter text" />
+        </div>
+      </div>
+
+      <!-- Input Password dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">Password Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Enter password" />
+        </div>
+      </div>
+
+      <!-- Input Email dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+        </div>
+      </div>
+
+      <!-- Input Number dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputNumber" class="form-label">Number Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-hash"></i></span>
+          <input type="number" class="form-control" id="inputNumber" placeholder="Enter number" />
+        </div>
+      </div>
+
+      <!-- Input Date dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputDate" class="form-label">Date Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+          <input type="date" class="form-control" id="inputDate" />
+        </div>
+      </div>
+
+      <!-- Input Tel dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputTel" class="form-label">Telephone Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+          <input type="tel" class="form-control" id="inputTel" placeholder="Enter phone number" />
+        </div>
+      </div>
+
+      <!-- Input URL dengan Ikon -->
+      <div class="mb-3">
+        <label for="inputURL" class="form-label">URL Input</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+          <input type="url" class="form-control" id="inputURL" placeholder="Enter URL" />
+        </div>
+      </div>
+    </div>
+
+    <!-- contoh form floating icon -->
+    <div class="container mt-5">
+      <h1>Contoh Floating Form dengan Ikon</h1>
+
+      <!-- Floating Text Input with Icon -->
+      <span class="input-group-text"><i class="bi bi-person"></i></span>
+      <div class="form-floating mb-3 position-relative">
+        <input type="text" class="form-control" id="floatingText" placeholder="Enter text" />
+        <label for="floatingText">Text Input</label>
+      </div>
+
+      <!-- Floating Password Input with Icon -->
+      <div class="form-floating mb-3 position-relative">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Enter password" />
+        <label for="floatingPassword">Password Input</label>
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+      </div>
+
+      <!-- Floating Email Input with Icon -->
+      <div class="form-floating mb-3 position-relative">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="Enter email" />
+        <label for="floatingEmail">Email Input</label>
+        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+      </div>
+    </div>
+
+    <!-- slecet option -->
+    <div class="container mt-5">
+      <h1>Contoh Select dengan Ikon</h1>
+      <select class="selectpicker" data-live-search="true">
+        <option data-icon="bi bi-person">Person</option>
+        <option data-icon="bi bi-lock">Lock</option>
+        <option data-icon="bi bi-envelope">Email</option>
+        <option data-icon="bi bi-telephone">Telephone</option>
+        <option data-icon="bi bi-calendar">Calendar</option>
+      </select>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".selectpicker").selectpicker();
+      });
+    </script>
+  </body>
+</html>
