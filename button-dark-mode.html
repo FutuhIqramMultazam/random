@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html id="html" lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bs</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="icons/bootstrap-icons.css" />
+  </head>
+  <body>
+    <!-- atas -->
+
+    <div class="container">
+      <div class="form-check form-switch">
+        <input id="nyala" class="form-check-input" type="checkbox" role="switch" id="nyala" />
+        <label class="form-check-label" for="nyala">alihkan ke mode terang</label>
+      </div>
+    </div>
+
+    <!-- atas -->
+
+    <script>
+      const html = document.getElementById("html");
+      const nyala = document.getElementById("nyala");
+
+      nyala.addEventListener("click", function () {
+        if (this.checked) {
+          html.setAttribute("data-bs-theme", "light");
+        } else {
+          html.setAttribute("data-bs-theme", "dark");
+        }
+      });
+    </script>
+
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
