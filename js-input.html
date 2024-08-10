@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contoh Input ke JS dengan Form</title>
+  </head>
+  <body>
+    <form action="" method="" id="myForm">
+      <input type="text" id="userInput" placeholder="Masukkan sesuatu" />
+      <button id="button" type="button">button</button>
+    </form>
+
+    <ul>
+      <li>hello 1</li>
+      <li>hello 2</li>
+      <li>hello 3</li>
+      <li>hello 4</li>
+      <li>hello 5</li>
+    </ul>
+
+    <script>
+      const userInput = document.getElementById("userInput");
+      const button = document.getElementById("button");
+      const myForm = document.getElementById("myForm");
+
+      button.addEventListener("click", function (event) {
+        const inputNilai = userInput.value;
+        const li = document.querySelector("li:nth-child(2)");
+        const liBaru = document.createElement("li");
+        const teksLi = document.createTextNode(inputNilai);
+
+        liBaru.appendChild(teksLi);
+        li.appendChild(liBaru);
+      });
+    </script>
+  </body>
+</html>

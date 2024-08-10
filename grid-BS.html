@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid SIstem</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="icons/bootstrap-icons.css" />
+    <style>
+      body {
+        height: 2000px;
+      }
+
+      .container .row:nth-child(1) {
+        margin-top: 100px;
+      }
+      .container .row:nth-child(2) {
+        margin-top: 90px;
+      }
+      .container .row:nth-child(3) {
+        margin-top: 90px;
+      }
+      .container .row:nth-child(4) {
+        margin-top: 90px;
+      }
+
+      .container .row:last-child {
+        width: 200px;
+        height: 200px;
+      }
+      .coba {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-black">
+        <div class="col-4 bg-secondary">secondary</div>
+        <div class="col-4 bg-primary">Primary</div>
+        <div class="col-4 bg-info">Info</div>
+      </div>
+
+      <!-- 12 col -->
+      <div class="row text-black">
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+        <div class="col bg-primary">colom</div>
+        <div class="col bg-info">colom</div>
+      </div>
+
+      <div class="row row-cols-4 bg-info-subtle">
+        <div class="col-2 border-light border">colom</div>
+        <div class="col-2 border-light border">colom</div>
+        <div class="col-2 border-light border">colom</div>
+        <div class="col-2 border-light border">colom</div>
+        <div class="col-2 border-light border">colom</div>
+        <div class="col-2 border-light border">colom</div>
+      </div>
+
+      <div class="row justify-content-center align-items-center bg-danger-subtle">
+        <div class="col-6 bg-danger overflow-auto coba">asdasdsad</div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
