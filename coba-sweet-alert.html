@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+  </head>
+  <body>
+    <button class="btn btn-primary my-3 mx-3" type="button" id="tombol">Coba</button>
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script>
+      const tombol = document.getElementById("tombol");
+      tombol.addEventListener("click", function () {
+        Swal.fire({
+          icon: "question",
+          title: "Berhasil Masuk",
+          background: "gray",
+          color: "black",
+          showConfirmButton: true,
+          showCancelButton: true,
+        });
+      });
+    </script>
+  </body>
+</html>

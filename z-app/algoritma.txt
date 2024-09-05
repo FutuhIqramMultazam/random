@@ -1,0 +1,126 @@
+### ALGORITMA UNTUK CONN DB BIASA TIDAK MENGGUNAKAN WRAPPER ###
+
+
+// property dbh, stmt
+// constrac
+// var dsn dan masukan nilai mysql:host....
+// bikin try dan catch 
+// instansiasi PDO masukin ke property dbh di bagian try
+// jangan lupa isi argumen di pdo dengan dsn,
+// get message di bagian cathc
+// bikin function getAllMhs
+// prepare masukin ke stmt
+// jalankan method execute
+// return fetc all
+
+
+#### ALGORITMA UNTUK MATERI DATABASE WRAPPER ###
+
+- buat folder config
+- buat file config.php di dalam folder config
+- require init ke config dan file nnya
+- buat variable konstanta di dalam yang di isikan dengan nama db di file config
+- buat file Database.php di folder core lalu buat class databse 
+- buat 6 property private yaitu $host, $user, $pass, $db_name, $dbh, $stmt;
+- lalu isi masing masing prpt dengan value constant
+- buat method constrac samain sama yang ada di mahsiswa_model 
+- pake try jangan lupa 
+- buat var arry options di dalam method constrac untuk param di clas PDO
+- lalu isi var tersebut dengan PDO::atr persisten => true
+- lalu , PDO atr ermod => PDO errmode exception, saya belum tau juga apa fungsi nya bikin ginian
+- lalu isi tiap dsn dengan value property
+- lalu di bawah constrac buat method dengan nama query kasih param satu aja, lalu isi sama methodnya percis ketika kamu membuat method (ambilSemuaData) tapi hanya bagian query nya aja 
+- udah itu buat method bind , entah lah buat apa bind ini belum jelas
+- lalu lanjut lagi kamu bikini method dengan nama execute tapi ini method lokal bukan ambil dari class PDOStatment lalu simpan nnti di method selanjut nya yaitu return, tapi bukan return sih sekarang mah tapi resultSet
+- bikin method resultSet lalu isi nya panggil metod execute di dalam nya, terus return kaya biasa pake fetchAll dan bikin satu metod lagi dengan nama singel
+- udah gtu jangan lupa init ke core/database
+- masuk ke mhs_model lalu kasih 2 private proprty yaitu $table di kasih value mahasiswa dan $db
+- lalu bikin pubc lalu di dalam nya instansiasi class databases dimasukan ke prpty $db 
+- lalu isi dari method getAllmhs nya panggil method query yang ada di clss database dan masukan argumen query all data
+- lalu return menggunakan metod resultSet yang ada di cls DB juga,
+- udah beres itu kita ubah list nama yang ada di index mhs dengan per nama aja disertai badge untuk detail info dari data mhs tersebut 
+- pergi ke controllers mhs dan bikin method detail dengan param id di copas aja
+- ganti method dari getAllmhs jadi getmhsbyid
+- lalu ke mhs_model 
+- tambahkan metod nya dan isi query nya dengan where id=:id
+- lalu panggil metod bind dan masukan id nnya
+- lalu return dan single
+
+
+
+
+
+#### ALGORITMA UNTUK MATERI FLASH MESSAGE ###
+
+- buat file flasher di core
+- jangan lupa init
+- buat cl dan beri method setFlash dengan static agar bisa di panggil tampa instansiasi
+- beri parameter di methodnya, $pesan = "berhasil/gagal" , $aksi = "ditambahkan/hapus", $tipe = "success/danger"
+- isi method nya dengan $_sesion["flash"] = ['pesan => $psean, ...']
+- bikin lagi method dengan nama flash lalu bikin static
+- isi method nya dengan if isset sesion [flash]
+- lalu masukan templet bs alert ke dalam eco dan masukan ke perkondisian
+- ubah bg color/warning dari bs menjadi sesuai dari sesion flash tipe, pesan, aksi
+- unset $-session flash di bawah eco
+- pergi ke public/index lalu jalankan sesion nya pake IF = !sesion id ? session_star 
+- pergei ke views/../index lalu bikin row col lg 6 di paling atas 
+- di dalam nya panggil flasher juga metod::flash karena dia static jadinya pake ::
+- pergi ke kontrollernya lalu pasang di method tambah di perkondisian
+- pasang di atas header tapi method nya setflasher
+- lalu isi parameter nya mulai dari pesan, aksi, tipe;
+- dan buat juga untuk yang false nya
+
+
+
+
+
+#### perkiraan saya: kayanya ngapus data sama deh ama nampilin detail, karena sama sama pake id, 
+ternyata iya dong tapi bedanya ini mah menggunakan metod execut dan return menggunakan rowcount agar perkondisian controllernya berpengaruh , maksudnya flashernya,
+
+
+
+
+#### ALGORITMA UNTUK UPDATE DATA DAN AJAX DI MVC ###
+
+- tambah 1 badge dengan bg warning untuk button ubah
+- ganti hrefnya jadi ubah
+- tambah atribut data-togel/target di ubah
+- buat file script js dan jangan lupa tambahkan di footer dan tambah juga JQuery di paling atas
+- buat $ function di file js 
+- kasih class tampilModalubah di badge ubah
+- balik ke js 
+- isi $ function nya dengan panggil badge ubah dan addEvent click lalu cek dulu dengan alert aja, memastikan 
+- pergi ke modal dan cari h5 lalu ganti id formModal jadi formModalLabel 
+- balik lagi ke js panggil id modal h5 lalu innerHTML, kalo di jqry inner itu jadi html
+- ini akan eror, solusinya balik ke views/mhs/indx lalu cari button modal, dan tambah di class nya nama apa aja yang penting jquey bisa mangil 
+- lalu ke js lagi copas aja tampilmodal nya dan panggil class butn modal dan ubah html nya
+- udah gtu kita ambil button modal nya dengan cara css selector yang button[type=submit] lalu inner 
+- bikin atribut baru di badge warning dengan nama data-id lalu peco mhs id
+- lalu ke js bikin di bawah dua inner tampilModalubah variable const id di isi dengan $(this).data(id), coba console log dulu
+- jalankan ajax 
+- isi URL, artinya mau ambil data di mana?
+- isi data, dengan id:id
+- isi metod dengan post 
+- isi dataType dengan json
+- isi success dengan function, terus isi param nya dengan data lalu body nya isi log aja masukin param data untuk ngetes dulu
+- dan buat method getUbah di dalam kelas controllers mhs 
+- dan isi dengan eco random aja dulu buat ngetes 
+- jika udah beres nguliknya yu lanjut, panggil metod model isi dengan mhs_model dan panggil metod getDataById di dalam metod getUbah
+- karena ini adalah array asosi, makanya bungkus dengan json, caranya dengan json_encode
+- coba itu bungkus dengan eco terus cek di browser 
+- jika sudah ada kita lanjut, lihat di tiap tiap input ada id ga, kalo ada kita ke js lagi
+- hapus log yang ada di objek succes 
+- lalu ganti dengan $ cari input nama lalu ubah value nama nya dengan .val(data.nama)
+- cek dulu, kalo berhasil lanjut 
+- jika berhasil duplikat aja , lalu ganti satu satu, yang tadinya nama jadi nim,email,jurusan 
+- dari sini kita belum beres karena action nya masih ngaco, coba deh ubah satu data aja pasti malah nambah bukan ngubah
+- solusinya kita ke js lagi, lalu panggil form modal-body, pemangilannya pakai css selector aja
+- lalu ganti attr nya yaitu action, di dalam atr itu ada dua argumen, action dan alamat kirim nya,
+- ke views/mhs bikin input type=hidden name=id id=id, 
+- ke js tambah di objek success #id data.id 
+- ke control mhs bikin metod ubah, lalu isi nya sama dengan insert data, ya udah copas aja insert yang di situ bro 
+- ganti mhs_model nya jadi ubahDataMhs,
+- pergi ke model lalu copas tambahDataMhs dan ganti jadi ubahDataMhs 
+- ganti query nya jadi update, jangan lupa where id nya yaa,
+- copas satu bind nya buat id 
+- berhasil deh 

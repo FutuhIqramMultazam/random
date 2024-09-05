@@ -6,26 +6,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="icons/bootstrap-icons.css" />
-    <style>
-      .tek-sadow {
-        text-shadow: 0 2px 2px rgb(0 0 0 /0.5);
-      }
-
-      img {
-        width: 50px;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <div class="container mt-4">
-      <img src="img/66861a27b7354.jpg" class="float-end me-3" alt="Contoh Gambar" />
-      <p>
-        Ini adalah paragraf contoh yang akan mengelilingi gambar. Bootstrap 5 menyediakan kelas-kelas float seperti `float-start` dan `float-end` untuk memposisikan gambar di sisi kiri atau kanan, dengan teks yang mengalir di sekitar gambar
-        tersebut. Kamu juga bisa menambahkan margin di sekitar gambar dengan kelas seperti `me-3` untuk memberi ruang antara gambar dan teks.
-      </p>
-      <p>Kamu bisa menggunakan kombinasi dari kelas-kelas ini untuk mendapatkan tampilan yang sesuai dengan yang kamu inginkan. Teks tambahan di sini akan terus mengelilingi gambar sesuai dengan float yang diberikan.</p>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <div class="input-group input-group-sm w-25">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
+          <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i></span>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0 justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="d-flex border border-danger justify-content-between mt-5">
+      <div class="p-2 text-bg-success flex-grow-5 order-lg-2">Flex item 1</div>
+      <div class="p-2 text-bg-warning order-lg-1">Flex item</div>
+      <div class="p-2 text-bg-primary order-lg-3">Third flex item</div>
     </div>
 
     <script src="js/bootstrap.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

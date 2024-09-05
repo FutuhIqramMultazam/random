@@ -1,0 +1,118 @@
+saya sedang belajar tentang mvc dan saya kebingungan, jadi ceritanya saya itu memiliki folder mvc, dan di dalam nya terdapat dua folder, 
+public dan app, 
+di dalam folder public ada file index.php, 
+dan di dalam folder app ada 3 folder dan 1 file 
+yaiut folder contollers, core, views, dan file init.php , 
+di dalam folder controllers ada dua file yaitu About.php dan Home.php, 
+di dalam folder core ada dua file yaitu App.php, Controller.php, 
+di dalam folder views ada 1 folder nama nya home, di dalam folder home itu ada file index.php.
+
+ini file index.php yang ada di folder public:
+
+<?php
+
+require_once '../app/init.php';
+
+$app = new App();
+
+ini file init.php yang ada di folder app:
+
+<?php
+require_once 'core/App.php';
+require_once 'core/Controller.php';
+
+ini file App yang ada di folder core:
+
+<?php
+class App
+{
+    protected $controller = 'Home';
+    protected $method = 'index';
+    protected $params = [];
+
+    public function __construct()
+    {
+
+        $str = $this->parseURL();
+
+        // controller
+        if ($str !== null && file_exists('../app/controllers/' . $str[0] . '.php')) {
+            $this->controller = $str[0];
+            unset($str[0]);
+        }
+
+        require_once '../app/controllers/' . $this->controller . ".php";
+        $this->controller = new $this->controller;
+
+        // method 
+        if (isset($str[1])) {
+            if (method_exists($this->controller, $str[1])) {
+                $this->method = $str[1];
+                unset($str[1]);
+            }
+        }
+
+        // params 
+        if (!empty($str)) {
+            $this->params = array_values($str);
+        }
+
+        // jalankan conrol dan metod, serta kirimkan params jika ada 
+        call_user_func_array([$this->controller, $this->method], $this->params);
+    }
+
+    public function parseURL()
+    {
+        if (isset($_GET['url'])) {
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = explode('/', $url);
+            return $url;
+        }
+
+        // return null;
+    }
+}
+
+ini file Controller.php yang ada di folder core:
+
+<?php
+
+class Controller
+{
+    public function view($view, $data = [])
+    {
+        require_once "../app/views/" . $view . ".php";
+    }
+}
+
+ini file Home yang ada di folder controllers :
+
+<?php
+
+class Home extends Controller
+{
+    public function index()
+    {
+        $this->view('home/index');
+    }
+}
+
+dan ini adalah file index.php yang berada di folder home yang terletak di folder views:
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman home</title>
+</head>
+
+<body>
+    <h1>Selamat Datang</h1>
+</body>
+
+</html>..
+
+Yang saya ingin tanyakan di sini adalah mengapa file Home.php yang ada di folder controllers bisa extends ke file Controller.php yang ada di folder core, coba jelaskan dan simulasikan
