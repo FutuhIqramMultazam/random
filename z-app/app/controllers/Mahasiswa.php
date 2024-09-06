@@ -25,11 +25,11 @@ class Mahasiswa extends Controller
         $post_data = array_map('htmlspecialchars', $_POST);
 
         // Validasi data kosong
-        if (in_array("", $post_data)) {
-            Flasher::setFlash("mahasiswa", "Gagal", "danger", " Di tambahkan, Semua field harus diisi.");
-            header("location:" . URL_UTAMA . "mahasiswa");
-            exit;
-        }
+        // if (in_array("", $post_data)) {
+        //     Flasher::setFlash("mahasiswa", "Gagal", "danger", " Di tambahkan, Semua field harus diisi.");
+        //     header("location:" . URL_UTAMA . "mahasiswa");
+        //     exit;
+        // }
 
         if ($this->model('Mahasiswa_model')->tambahDataMhs($post_data) > 0) {
             Flasher::setFlash("mahasiswa", "Berhasil", "success", "di tambahkan");
@@ -46,6 +46,26 @@ class Mahasiswa extends Controller
     {
         if ($this->model('Mahasiswa_model')->hapusDataMhs($id) > 0) {
             Flasher::setFlash("mahasiswa", "Berhasil", "success", "di Hapus");
+            header("location:" . URL_UTAMA . "mahasiswa");
+            exit;
+        }
+    }
+
+    public function getUbah()
+    {
+        echo json_encode($this->model("mahasiswa_model")->getDataByid($_POST["id"]));
+    }
+
+    public function ubah()
+    {
+        $post_data = array_map('htmlspecialchars', $_POST);
+
+        if ($this->model('Mahasiswa_model')->ubahDataMhs($post_data) > 0) {
+            Flasher::setFlash("mahasiswa", "Berhasil", "success", "di ubah");
+            header("location:" . URL_UTAMA . "mahasiswa");
+            exit;
+        } else {
+            Flasher::setFlash("mahasiswa", "Gagal", "danger", "di ubah");
             header("location:" . URL_UTAMA . "mahasiswa");
             exit;
         }

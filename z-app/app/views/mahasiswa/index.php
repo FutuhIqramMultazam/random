@@ -5,20 +5,21 @@
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary my-3 tampilModalTambah" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Tambah Data Mahasiswa
 </button>
 
 <h1>Data Mahasiswa</h1>
 
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <ul class="list-group">
             <?php foreach ($data["mhs"] as $dd): ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <?= $dd["nama"]; ?>
                     <div class="d-flex">
                         <a href="<?= URL_UTAMA ?>mahasiswa/detail/<?= $dd["id"] ?>" class="badge text-bg-primary rounded-2 text-decoration-none">detail</a>
+                        <a href="<?= URL_UTAMA ?>mahasiswa/ubah/<?= $dd["id"] ?>" class="badge ms-2 text-bg-warning rounded-2 text-decoration-none tampilModalUbah" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?= $dd["id"] ?>">ubah</a>
                         <a href="<?= URL_UTAMA ?>mahasiswa/hapus/<?= $dd["id"] ?>" class="badge ms-2 text-bg-danger rounded-2 text-decoration-none" onclick="return confirm('Anda yakin akan menghapus nya?')">hapus</a>
                     </div>
                 </li>
@@ -38,6 +39,9 @@
             <div class="modal-body">
 
                 <form action="<?= URL_UTAMA ?>mahasiswa/tambah" method="post">
+
+                    <input type="hidden" name="id" id="id">
+
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input name="nama" autocomplete="off" type="text" class="form-control" id="nama" placeholder="....">

@@ -87,7 +87,7 @@ ternyata iya dong tapi bedanya ini mah menggunakan metod execut dan return mengg
 - tambah atribut data-togel/target di ubah
 - buat file script js dan jangan lupa tambahkan di footer dan tambah juga JQuery di paling atas
 - buat $ function di file js 
-- kasih class tampilModalubah di badge ubah
+- kasih class tampilModalUbah di badge ubah
 - balik ke js 
 - isi $ function nya dengan panggil badge ubah dan addEvent click lalu cek dulu dengan alert aja, memastikan 
 - pergi ke modal dan cari h5 lalu ganti id formModal jadi formModalLabel 
@@ -98,7 +98,7 @@ ternyata iya dong tapi bedanya ini mah menggunakan metod execut dan return mengg
 - bikin atribut baru di badge warning dengan nama data-id lalu peco mhs id
 - lalu ke js bikin di bawah dua inner tampilModalubah variable const id di isi dengan $(this).data(id), coba console log dulu
 - jalankan ajax 
-- isi URL, artinya mau ambil data di mana?
+- isi URL, artinya mau ambil data di mana?, di metod getUbah aja yang ada di mhs
 - isi data, dengan id:id
 - isi metod dengan post 
 - isi dataType dengan json
@@ -123,4 +123,4 @@ ternyata iya dong tapi bedanya ini mah menggunakan metod execut dan return mengg
 - pergi ke model lalu copas tambahDataMhs dan ganti jadi ubahDataMhs 
 - ganti query nya jadi update, jangan lupa where id nya yaa,
 - copas satu bind nya buat id 
-- berhasil deh 
+- berhasil deh  Alhamdulillah 
