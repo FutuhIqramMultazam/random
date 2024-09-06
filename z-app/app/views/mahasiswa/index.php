@@ -4,10 +4,26 @@
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary my-3 tampilModalTambah" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Tambah Data Mahasiswa
-</button>
+<!-- tambah data -->
+<div class="row">
+    <div class="col-lg-6">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary my-3 tampilModalTambah" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Tambah Data Mahasiswa
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <form action="<?= URL_UTAMA; ?>mahasiswa/cari" method="post">
+            <div class="input-group mb-3">
+                <input autocomplete="off" type="text" class="form-control" placeholder="cari mahasiswa" aria-label="cari mahasiswa" aria-describedby="button-addon2" name="keyword" id="keyword">
+                <button class="btn btn-info" type="submit" id="tombolCari">Cari</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <h1>Data Mahasiswa</h1>
 
